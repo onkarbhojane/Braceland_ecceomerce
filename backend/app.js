@@ -9,8 +9,18 @@ import product from './models/Products.models.js';
 import Review from './models/Review.models.js';
 import Order from './models/Orders.models.js';
 // Establish database connection
-conn('BraceLet');
+import 'dotenv/config'
+// require('dotenv').config();
 
+const PORT = process.env.PORT;
+const DB_PASS = process.env.PASS;
+const USER_ID = process.env.ID;
+
+if (!PORT || !DB_PASS || !USER_ID) {
+    throw new Error("Missing required environment variables");
+}
+
+conn('BraceLet');
 // Create an Express application
 const app = express();
 app.use(cors())
@@ -308,6 +318,6 @@ app.get('/user/profile',jwtAuthMiddleware,async(req,res)=>{
     res.status(500).json({ error: "Error in fetching cart data" });
   }
 })
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log('Listening on port 3000...');
 });

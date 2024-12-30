@@ -65,9 +65,9 @@ const BuyNowPage = () => {
     };
     // Fetch product data on page load
     useEffect(() => {
-        setProduct(BuyingPrdt);
+        setProduct([...BuyingPrdt]);
         console.log("dddddddddffffffffffffff", product);
-    }, [BuyingPrdt]);
+    }, []);
 
     if (!BuyingPrdt || !product) {
         return (

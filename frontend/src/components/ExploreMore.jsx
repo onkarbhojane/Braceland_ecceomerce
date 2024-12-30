@@ -109,7 +109,7 @@ const Products = ({ products }) => {
                             <button
                                 className="buy-now-btn"
                                 onClick={() => {
-                                    setBuyingPrdt(product); // Wrap in an array if you expect a list
+                                    setBuyingPrdt([product]); // Wrap in an array if you expect a list
                                     navigate('/buyNow');
                                 }}
 
