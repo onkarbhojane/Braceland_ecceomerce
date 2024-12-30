@@ -13,7 +13,7 @@ const UserAuth = () => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/login", {
+      const response = await axios.post("https://braceland-eccomerce-backend.onrender.com/api/login", {
         EmailId: formData.EmailId,
         password: formData.password,
       });
@@ -28,7 +28,7 @@ const UserAuth = () => {
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("/api/signup", {
+      const response = await axios.post("https://braceland-eccomerce-backend.onrender.com/api/signup", {
         userName: formData.userName,
         EmailId: formData.EmailId,
         password: formData.password,

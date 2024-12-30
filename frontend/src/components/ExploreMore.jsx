@@ -12,7 +12,7 @@ const ExploreMore = () => {
     const [products, setProducts] = useState([]);
     useEffect(() => {
         (async () => {
-            const res = await axios.get('http://localhost:3000/ExploreContent');
+            const res = await axios.get('https://braceland-eccomerce-backend.onrender.com/ExploreContent');
             if (res.status == 201) {
                 console.log(res.data.docs, "1111111111");
                 setProducts([...res.data.docs]);
@@ -67,7 +67,7 @@ const Products = ({ products }) => {
         try {
             const Token = document.cookie.split("=")[1];
             console.log("tttttttttttttttoken", Token)
-            const res = await axios.post('http://localhost:3000/AddCart', { product }, {
+            const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/AddCart', { product }, {
                 headers: {
                     Authorization: `Bearer ${Token}` // Using Authorization header
                 }
@@ -148,7 +148,7 @@ const Navbar = () => {
 
     const sendData = async () => {
         try {
-            const res = await axios.post('http://localhost:3000/signup', data);
+            const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/signup', data);
             if (res.status === 201) {
                 document.cookie = 'Token=' + res.data.Token;
                 setLog(true);
@@ -161,7 +161,7 @@ const Navbar = () => {
 
     const sendLogin = async () => {
         try {
-            const res = await axios.post('http://localhost:3000/login', Login);
+            const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/login', Login);
             if (res.status === 201) {
                 document.cookie = 'Token=' + res.data.Token;
                 setLog(true);

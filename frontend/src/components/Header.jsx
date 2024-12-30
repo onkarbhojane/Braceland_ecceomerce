@@ -25,7 +25,7 @@ const Header = () => {
 
     // Fetch user profile data if logged in (assuming an API endpoint to get user details)
     if (isLogged) {
-      axios.get('http://localhost:3000/user/profile', {
+      axios.get('https://braceland-eccomerce-backend.onrender.com/user/profile', {
         headers: { Authorization: `Bearer ${document.cookie.split('=')[1]}` }
       })
         .then((response) => setUserProfile(response.data))
@@ -35,7 +35,7 @@ const Header = () => {
 
   const sendData = async () => {
     try {
-      const res = await axios.post('http://localhost:3000/signup', data);
+      const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/signup', data);
       if (res.status === 201) {
         document.cookie = 'Token=' + res.data.Token;
         setLog(true);
@@ -48,7 +48,7 @@ const Header = () => {
 
   const sendLogin = async () => {
     try {
-      const res = await axios.post('http://localhost:3000/login', Login);
+      const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/login', Login);
       if (res.status === 201) {
         document.cookie = 'Token=' + res.data.Token;
         setLog(true);

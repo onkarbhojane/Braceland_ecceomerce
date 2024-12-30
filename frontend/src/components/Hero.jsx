@@ -9,7 +9,7 @@ const Hero = () => {
   useEffect(()=>{
     (async()=>{
       try{
-        const res=await axios.get('http://localhost:3000/Story');
+        const res=await axios.get('https://braceland-eccomerce-backend.onrender.com/Story');
         if(res.status==201){
           setImages([...res.data.images]);
           console.log("IIIIIIIIIIIIIIIIIII",images);

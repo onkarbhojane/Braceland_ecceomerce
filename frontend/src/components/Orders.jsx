@@ -15,7 +15,7 @@ const Orders = () => {
                 console.log("Token:", Token);
 
                 const res = await axios.get(
-                    'http://localhost:3000/getOrders', 
+                    'https://braceland-eccomerce-backend.onrender.com/getOrders', 
                     {
                         headers: {
                             Authorization: `Bearer ${Token}`,  // Using Authorization header
@@ -52,7 +52,7 @@ const Orders = () => {
         try {
             const Token = document.cookie.split("=")[1]; // Get the token from cookies
             const res = await axios.post(
-                `http://localhost:3000/cancelOrder/${orderId}`, 
+                `https://braceland-eccomerce-backend.onrender.com/cancelOrder/${orderId}`, 
                 {}, // You can pass any required data here
                 {
                     headers: {
