@@ -189,7 +189,6 @@ const Navbar = () => {
         setProfile(true); // Open the profile modal
         setModalVisible(true); // Show the modal
     };
-    // Close dropdown when clicking outside
     useEffect(() => {
         const handleOutsideClick = (event) => {
             if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {

@@ -265,16 +265,13 @@ app.post('/cancelOrder/:orderId', jwtAuthMiddleware, async (req, res) => {
       return res.status(404).json({ message: 'Order not found or you do not have permission to cancel it' });
     }
 
-    // Remove the canceled order from the user's Orders array
     await user.findOneAndUpdate(
-      { _id: userId }, // Find the user by their ID
-      { $pull: { Orders: orderId } } // Remove the orderId from the Orders array
+      { _id: userId },
+      { $pull: { Orders: orderId } }
     );
 
-    // Optionally, delete the order from the Order collection
-    await Order.findByIdAndDelete(orderId);  // Remove the order from the Order collection
+    await Order.findByIdAndDelete(orderId);  
 
-    // Send a success response
     res.status(200).json({ message: 'Order canceled successfully', order });
 
   } catch (error) {
@@ -288,14 +285,11 @@ app.get('/getCart', jwtAuthMiddleware, async (req, res) => {
   try {
     const { userName, EmailId } = req.userPayload;
 
-    // Find the user by userName and EmailId
     const user1 = await user.findOne({ userName, EmailId });
     
-    // Fetch the cart from the user document
     const data = user1.Cart;
 
-    // Send the cart data back as a response (without the 'data' wrapper)
-    res.status(200).json(data);  // Change status to 200 for successful fetch
+    res.status(200).json(data);  
   } catch (error) {
     console.log("Error in fetching cart data: ", error);
     res.status(500).json({ error: "Error in fetching cart data" });
