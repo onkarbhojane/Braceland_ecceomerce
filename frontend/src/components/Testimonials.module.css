@@ -1,0 +1,74 @@
+.testimonials {
+  padding: 50px 20px; /* Padding for top, bottom, and sides */
+  background-color: #f8f4f1; /* Background color */
+  text-align: center;
+  width: 100%; /* Ensures full width */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsive grid with flexible columns */
+  gap: 20px; /* Space between cards */
+  width: 100%; /* Ensure grid spans full width */
+  box-sizing: border-box; /* Includes gap in width calculation */
+}
+
+.card {
+  margin: 10px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for card */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Adds a zoom effect on hover */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+.card p {
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.card h3 {
+  color: #333;
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.loadMoreButton {
+  margin-top: 20px;
+}
+
+.button {
+  background-color: #007bff; /* Blue color */
+  color: white;
+  padding: 15px 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px; /* Rounded corners */
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 123, 255, 0.3); /* Soft shadow */
+}
+
+.button:hover {
+  background-color: #0056b3; /* Darker blue */
+  transform: translateY(-2px); /* Hover effect */
+  box-shadow: 0 8px 16px rgba(0, 123, 255, 0.5); /* Darker shadow on hover */
+}
+
+.button:active {
+  transform: translateY(0); /* Slightly move back on click */
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Softer shadow on click */
+}
+
+p {
+  font-size: 1rem;
+  color: #333;
+}

@@ -1,0 +1,139 @@
+.exploreMoreContainer {
+  text-align: center;
+  margin-top: 20px; /* Add space between tabs and button */
+}
+
+.exploreMoreButton {
+  background-color: #007bff;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+}
+
+.exploreMoreButton:hover {
+  background-color: #0056b3;
+}
+
+.products {
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.scroller {
+  display: flex;
+  overflow-x: auto;
+  gap: 18px;
+  padding: 20px 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  scroll-behavior: smooth; /* Enables smooth scrolling */
+}
+
+.scroller::-webkit-scrollbar {
+  height: 8px; /* Adjust height for horizontal scrollbar */
+}
+
+.scroller::-webkit-scrollbar-thumb {
+  background: #007bff;
+  border-radius: 4px;
+}
+
+.scroller::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.card {
+  flex: 0 0 calc(30% - 10px); /* Reduced width from 33.33% to 30% */
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  text-align: center;
+  padding: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition */
+  min-width: 270px; /* Reduced minimum width */
+}
+
+
+.card img {
+  border-radius: 8px;
+}
+
+.card:hover {
+  box-shadow: 0 0 15px rgba(0, 123, 255, 0.7); /* Blue glow effect */
+  transform: scale(1.05); /* Slightly enlarge the card */
+}
+/* Modal Overlay */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Content */
+.modalContent {
+  background: white;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 500px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close Button */
+.closeButton {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #333;
+}
+
+.closeButton:hover {
+  color: #ff3333;
+}
+
+/* Modal Image */
+.modalContent img {
+  margin-bottom: 1rem;
+  border-radius: 8px;
+}
+
+/* Explore More Button */
+.exploreMoreContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.exploreMoreButton {
+  padding: 1rem 2rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.exploreMoreButton:hover {
+  background-color: #0056b3;
+}

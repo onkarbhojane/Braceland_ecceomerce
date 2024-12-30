@@ -1,0 +1,22 @@
+.about {
+  padding: 50px 20px; /* Padding for top, bottom, and sides */
+  text-align: center;
+  background-color: #f8f4f1;
+  width: 100%; /* Ensures full width */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+  color: #333; /* Darkens heading for better contrast */
+}
+
+p {
+  max-width: 100%; /* Allows paragraph to take full width */
+  margin: 0 auto;
+  color: #555;
+  font-size: 1rem;
+  line-height: 1.6; /* Enhances readability */
+  padding: 0 15px; /* Adds slight padding for better text flow */
+}

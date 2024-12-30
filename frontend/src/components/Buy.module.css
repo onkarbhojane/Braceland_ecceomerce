@@ -1,0 +1,355 @@
+/* General Page Styles */
+.buyNowPage {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 10vh;
+    padding: 2rem;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.buyNowPage {
+    padding: 20px;
+}
+
+.productContainer {
+    margin-left: 5vh;
+    display: flex;
+    /* Makes the product items align horizontally */
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
+    padding-bottom: 10px;
+    /* Adds space at the bottom for scrolling */
+    gap: 20px;
+    /* Adds space between product items */
+}
+
+.productInfo {
+    min-width: 200px;
+    /* Sets a minimum width for each product */
+    flex-shrink: 0;
+    /* Prevents items from shrinking */
+    text-align: center;
+    /* Centers the text */
+}
+
+.productImage {
+    width: 300px;
+    /* Ensures the image fills the container */
+    height: auto;
+    /* Maintains the aspect ratio */
+    border-radius: 8px;
+    /* Optional: Adds rounded corners to images */
+}
+
+
+h1,
+h2,
+h3 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+/* Product Information Section */
+.productInfo {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.productInfo h2 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.productInfo p {
+    font-size: 1rem;
+    color: #666;
+}
+
+/* No Product Selected Section */
+.noProduct {
+    text-align: center;
+    padding: 2rem;
+    background-color: #ffe6e6;
+    border: 1px solid #ffcccc;
+    border-radius: 8px;
+    color: #ff3333;
+}
+
+/* Login Prompt Section */
+.loginPrompt {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.loginBtn {
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.loginBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Order Form Section */
+.orderForm {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 2rem;
+}
+
+.addressSection {
+    margin-bottom: 2rem;
+}
+
+.addressSection input {
+    width: calc(100% - 1rem);
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.addressSection h3 {
+    margin-bottom: 1rem;
+}
+
+/* Payment Section */
+.paymentSection {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.paymentSection h3 {
+    margin-bottom: 1rem;
+}
+
+.paymentButtons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.paymentBtn {
+    padding: 0.75rem 1.5rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f5f5f5;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    font-size: 1rem;
+}
+
+.paymentBtn:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+}
+
+.paymentBtn.active {
+    background-color: #4caf50;
+    color: white;
+    border-color: #4caf50;
+}
+
+/* Place Order Button */
+.placeOrderBtn {
+    display: block;
+    width: 100%;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    transition: background-color 0.3s;
+}
+
+.placeOrderBtn:hover {
+    background-color: #0056b3;
+}
+
+.placeOrderBtn.disabled {
+    background-color: #ff4d4d;
+    /* Red background when disabled */
+    cursor: not-allowed;
+}
+
+
+/* Responsiveness */
+@media (max-width: 600px) {
+    .buyNowPage {
+        padding: 1rem;
+    }
+
+    .paymentButtons {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .paymentBtn {
+        width: 100%;
+    }
+
+    .placeOrderBtn {
+        font-size: 1rem;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.closeButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}
+
+form div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+form input {
+    width: 60%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+form button {
+    background-color: #ff9e57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e58c47;
+}
+
+.switchLink {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.switchLink a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.switchLink a:hover,
+.switchLink a:focus {
+    text-decoration: underline;
+}
+
+.productContainer {
+    display: flex;
+    /* Makes the product items align horizontally */
+    overflow-x: auto;
+    /* Enables horizontal scrolling */
+    gap: 20px;
+    /* Adds space between product items */
+    padding-bottom: 20px;
+    /* Adds space at the bottom for scrolling */
+}
+
+.productCard {
+    min-width: 250px;
+    /* Sets a minimum width for each product card */
+    padding: 20px;
+    /* Adds padding inside the card */
+    background-color: #fff;
+    /* Card background color */
+    border-radius: 10px;
+    /* Adds rounded corners to the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Adds shadow to the card */
+    display: flex;
+    flex-direction: column;
+    /* Stack the contents vertically */
+    align-items: center;
+    /* Center items inside the card */
+    text-align: center;
+    /* Center the text */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth hover effect */
+}
+
+.productCard:hover {
+    transform: translateY(-5px);
+    /* Slight lift effect on hover */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Darker shadow on hover */
+}
+
+.productName {
+    font-size: 1.2rem;
+    /* Adjust font size */
+    margin-bottom: 10px;
+    /* Adds space below the product name */
+}
+
+.productImage {
+    width: 100%;
+    /* Ensures the image fills the container */
+    height: 150px;
+    /* Sets a fixed height for the image */
+    object-fit: cover;
+    /* Ensures the image covers the space without stretching */
+    border-radius: 8px;
+    /* Optional: Adds rounded corners to images */
+    margin-bottom: 10px;
+    /* Adds space below the image */
+}
+
+.productPrice {
+    font-size: 1.1rem;
+    /* Adjust font size for price */
+    color: #333;
+    /* Dark color for the price */
+    font-weight: bold;
+    /* Makes the price bold */
+}

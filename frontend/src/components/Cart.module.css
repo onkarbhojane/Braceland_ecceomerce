@@ -1,0 +1,114 @@
+.cart {
+    padding: 20px;
+    background-color: #f9f9f9;
+}
+
+.cartList {
+    margin-top: 90px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.cartRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.cartRow:hover {
+    transform: scale(1.02);
+}
+
+.cartImage {
+    object-fit: cover;
+}
+
+.cartDetails {
+    flex: 1;
+    padding-left: 15px;
+}
+
+.removeButton {
+    background-color: #f69605;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.removeButton:hover {
+    background-color: #e58c47;
+}
+
+.modalOverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modalContent {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    width: 100%;
+    text-align: center;
+}
+
+.closeButton {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.checkoutSection {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.checkoutButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.checkoutButton:hover {
+    background-color: #218838;
+}
+.modalPrice {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.modalImage {
+    width: 100%;           /* Ensure image fits within the modal width */
+    max-width: 400px;      /* Maximum width to maintain aspect ratio and layout */
+    height: auto;          /* Maintain aspect ratio of the image */
+    margin-bottom: 20px;   /* Space between the image and the other modal content */
+    display: block;        /* Block-level element */
+    object-fit: cover;     /* Ensure the image covers the area without distortion */
+    border-radius: 8px;    /* Rounded corners for a more polished look */
+}

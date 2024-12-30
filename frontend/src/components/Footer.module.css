@@ -1,0 +1,82 @@
+/* Ensure full width for footer */
+.footer {
+  padding: 20px;
+  background-color: #333;
+  color: white; /* Set the font color to white */
+  box-sizing: border-box;
+  position: relative;
+  min-height: 30vh; /* Increased for better content visibility */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center; /* Ensures content is vertically centered */
+  width: 100%; /* Ensures footer spans full width */
+}
+
+.footer p {
+  margin-bottom: 10px;
+  color: white; /* Ensure text color is white */
+}
+
+.socials a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #ff9e57; /* Set link color to a distinct color */
+  font-weight: bold;
+}
+
+.socials a:hover {
+  text-decoration: underline;
+  color: white; /* Change color of links on hover */
+}
+
+.footerInfo, .footerAddress {
+  margin-top: 10px;
+  font-size: 14px;
+  color: white; /* Ensure text color is white */
+}
+
+.footerInfo p,
+.footerAddress p {
+  margin: 5px 0;
+}
+
+.footerInfo a {
+  color: #ff9e57;
+  text-decoration: none;
+}
+
+.footerInfo a:hover {
+  text-decoration: underline;
+  color: white; /* Set white color on hover */
+}
+
+.footerAddress {
+  color: white; /* Ensure footer address text is white */
+}
+
+.footerContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.footerLinks {
+  margin-top: 15px;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  width: 100%;
+}
+
+.footerInfo,
+.footerAddress {
+  width: 100%;
+  text-align: center;
+}
+
+/* Add some space to ensure footer elements are well-separated */
+.footerContent > * {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,288 @@
+/* Updated Header Styles */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: #f8f4f1;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-sizing: border-box;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .nav {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #555;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav a:hover, .nav a:focus {
+    color: #000;
+    outline: none;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+  
+  .cta {
+    background-color: #ff9e57;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cta:hover {
+    background-color: #e58c47;
+  }
+  
+  .userProfile {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  .userIcon {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .userName {
+    font-size: 16px;
+  }
+  
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    min-width: 150px;
+    padding: 10px;
+    z-index: 10;
+    border-radius: 5px;
+  }
+  
+  .dropdown a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+  }
+  
+  .dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Modal Styles */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 500px;
+    max-width: 90%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+  }
+  
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+  
+  form div {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  form input {
+    width: 60%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  form button {
+    background-color: #ff9e57;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #e58c47;
+  }
+  
+  .switchLink {
+    margin-top: 15px;
+    text-align: center;
+  }
+  
+  .switchLink a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .switchLink a:hover, .switchLink a:focus {
+    text-decoration: underline;
+  }
+  
+  .cta {
+    background-color: #f69605; /* Set a bright color for the background */
+    color: white; /* White text color */
+    border: none; /* Remove default border */
+    padding: 12px 25px; /* Provide padding for top, bottom, left, and right */
+    font-size: 0.9rem; /* Slightly larger font size */
+    border-radius: 8px; /* Rounded corners */
+    cursor: pointer; /* Change cursor to a pointer on hover */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold font for emphasis */
+    transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  }
+  
+  .cta:hover {
+    background-color: #e58c47; /* Darker shade on hover */
+    transform: translateY(-3px); /* Slight lift effect on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15); /* Deeper shadow on hover */
+  }
+  
+  .cta:focus {
+    outline: none; /* Remove the default focus outline */
+    box-shadow: 0px 0px 5px 2px rgba(255, 153, 51, 0.7); /* Add custom focus outline */
+  }
+  
+  .cta:active {
+    transform: translateY(1px); /* Slightly pressed effect on click */
+  }
+  .modal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: hidden; /* Completely remove scrollbars */
+    z-index: 1000;
+  }
+  
+  .modalContent {
+    display: flex;
+    flex-direction: column;
+    padding: 50px;
+    background-color: #fff;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px; /* Control modal width */
+    max-height: 80vh; /* Ensure modal doesn't exceed viewport height */
+    overflow: hidden; /* Remove scrollbars completely */
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+  }
+  
+  .profileContent {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .profileDetails {
+    display: flex;
+    flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    width: 100%; /* Ensure it doesn't overflow */
+  }
+  
+  .card {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    min-height: 150px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 123, 255, 0.6); /* Add glow effect */
+    transform: translateY(-5px); /* Slight lift on hover */
+  }
+  
+  .profileImage {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #ddd;
+  }
+  
+  .profileName {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-top: 10px;
+  }
+  

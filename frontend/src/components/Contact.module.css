@@ -1,0 +1,65 @@
+.contact {
+  padding: 50px 20px;
+  text-align: center;
+  background-color: #fff;
+  width: 100%; /* Ensures full width */
+  box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+h2 {
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #333; /* Ensures the header is dark enough for readability */
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%; /* Ensures the form takes full available width */
+}
+
+.form input,
+.form textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  width: 100%; /* Ensures form elements take full width of the container */
+  box-sizing: border-box; /* Includes padding in width calculation */
+  font-size: 16px;
+  color: #333; /* Makes text inside inputs readable */
+}
+
+.form input:focus,
+.form textarea:focus {
+  border-color: #ff9e57; /* Adds a focus effect for better user experience */
+  outline: none;
+}
+
+.form textarea {
+  resize: none; /* Prevents resizing of the textarea */
+  height: 100px; /* Sets a default height */
+}
+
+.form button {
+  background-color: #ff9e57;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.form button:hover {
+  background-color: #e67e22; /* Darker shade of orange for button hover */
+}
+
+.successMessage {
+  margin-top: 20px;
+  font-size: 16px;
+  color: #28a745; /* Green for success message */
+}

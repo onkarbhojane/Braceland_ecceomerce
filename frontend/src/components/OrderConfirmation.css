@@ -1,0 +1,113 @@
+/* General Styles for Order Confirmation Page */
+.orderConfirmationPage {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  /* Title and Order Details */
+  .orderConfirmationPage h1 {
+    color: #4caf50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .orderConfirmationPage h2 {
+    color: #333;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .orderConfirmationPage .orderDetails p {
+    font-size: 1.2rem;
+    color: #666;
+    margin: 0.5rem 0;
+  }
+  
+  .orderConfirmationPage .orderDetails span {
+    font-weight: bold;
+    color: #333;
+  }
+  
+  /* Congratulations Section */
+  .congratulations {
+    background-color: #e8f5e9;
+    border: 1px solid #c8e6c9;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    color: #4caf50;
+    text-align: center;
+  }
+  
+  .congratulations h3 {
+    color: #388e3c;
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .congratulations p {
+    color: #333;
+    font-size: 1.1rem;
+  }
+  
+  /* Buttons Section */
+  .buttons {
+    margin-top: 2rem;
+  }
+  
+  .buttons button {
+    padding: 1rem 2rem;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin: 0.5rem;
+    transition: background-color 0.3s;
+  }
+  
+  .buttons button:hover {
+    background-color: #388e3c;
+  }
+  
+  .buttons button:focus {
+    outline: none;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .orderConfirmationPage {
+      padding: 1rem;
+    }
+  
+    .orderConfirmationPage h1 {
+      font-size: 1.8rem;
+    }
+  
+    .orderConfirmationPage h2 {
+      font-size: 1.3rem;
+    }
+  
+    .orderConfirmationPage .orderDetails p {
+      font-size: 1rem;
+    }
+  
+    .congratulations {
+      font-size: 1rem;
+    }
+  
+    .buttons button {
+      width: 100%;
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  }
+  
