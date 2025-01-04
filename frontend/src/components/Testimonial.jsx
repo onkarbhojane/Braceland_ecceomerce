@@ -11,7 +11,7 @@ const Testimonials = () => {
   const fetchTestimonials = async (pageNum) => {
     setLoading(true);
     try {
-      const res = await axios.get(`https://braceland-eccomerce-backend.onrender.com/testimonials?page=${pageNum}`);
+      const res = await axios.get(`http://localhost:4000/testimonials?page=${pageNum}`);
       if (res.status === 201) {
         setTestimonial((prev) => [...prev, ...res.data.docs]);
         console.log(res.data.docs, " fetched testimonials");

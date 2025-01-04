@@ -136,13 +136,13 @@
   right: 10px;
 }
 
-form div {
+form1 div {
   margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
 }
 
-form input {
+form1 input {
   width: 60%;
   padding: 8px;
   margin-top: 5px;
@@ -150,7 +150,7 @@ form input {
   border-radius: 4px;
 }
 
-form button {
+form1 button {
   background-color: #ff9e57;
   color: white;
   padding: 10px 20px;
@@ -159,7 +159,7 @@ form button {
   cursor: pointer
 }
 
-form button:hover {
+form1 button:hover {
   background-color: #e58c47;
 }
 

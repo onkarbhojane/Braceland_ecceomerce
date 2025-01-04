@@ -3,7 +3,7 @@ import styles from './Header.module.css';
 import UserContext from '../Context/userContext.jsx';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+// https://braceland-eccomerce-backend.onrender.com
 const Header = () => {
   const [isDropdownVisible, setDropdownVisible] = useState(false);
   const [isModalVisible, setModalVisible] = useState(false); // Modal for profile
@@ -25,7 +25,7 @@ const Header = () => {
 
     // Fetch user profile data if logged in (assuming an API endpoint to get user details)
     if (isLogged) {
-      axios.get('https://braceland-eccomerce-backend.onrender.com/user/profile', {
+      axios.get('http://localhost:4000/user/profile', {
         headers: { Authorization: `Bearer ${document.cookie.split('=')[1]}` }
       })
         .then((response) => setUserProfile(response.data))
@@ -35,20 +35,30 @@ const Header = () => {
 
   const sendData = async () => {
     try {
-      const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/signup', data);
+      const res = await axios.post(
+        'http://localhost:4000/signup',
+        data,
+        { withCredentials: true } // Ensure backend allows credentials
+      );
+      console.log(res.data, "0000000000000000000");
+      
       if (res.status === 201) {
-        document.cookie = 'Token=' + res.data.Token;
+        console.log('Signup Response:', res.data); // Log response to verify structure
+        document.cookie = `Token=${encodeURIComponent(res.data.Token)}; path=/; SameSite=Strict;`;
         setLog(true);
         setModalVisible(false);
+      } else {
+        alert('Signup failed');
       }
     } catch (error) {
-      console.log('error in signup ', error);
+      console.error('Error in signup:', error.response?.data || error.message);
     }
   };
+  
 
   const sendLogin = async () => {
     try {
-      const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/login', Login);
+      const res = await axios.post('http://localhost:4000/login', Login);
       if (res.status === 201) {
         document.cookie = 'Token=' + res.data.Token;
         setLog(true);
@@ -60,12 +70,12 @@ const Header = () => {
   };
 
   const handleLoginClick = () => {
-    setIsSignUp(false); // Set to false for login form
+    setIsSignUp(false); // Set to false for login form1
     setModalVisible(true); // Show the login modal
   };
 
   const handleSignUpClick = () => {
-    setIsSignUp(true); // Set to true for signup form
+    setIsSignUp(true); // Set to true for signup form1
     setModalVisible(true); // Show the signup modal
   };
 
@@ -134,7 +144,7 @@ const Header = () => {
                   </a>
                 </>
               ) : (
-                <a href="#login" onClick={handleLoginClick}>
+                <a onClick={handleLoginClick}>
                   Login ?
                 </a>
               )}
@@ -158,7 +168,7 @@ const Header = () => {
               <div className={styles.profileContent}>
                 {/* Profile Image and Name */}
                 <div style={{
-                  marginLeft:'50px'
+                  marginLeft: '50px'
                 }}>
                   <img
                     src={userProfile.img || "https://img.freepik.com/free-vector/user-blue-gradient_78370-4692.jpg"}
@@ -196,9 +206,9 @@ const Header = () => {
               <>
                 <h2>{isSignUp ? 'Sign Up' : 'Login'}</h2>
 
-                {/* Login Form */}
+                {/* Login form1 */}
                 {!isSignUp ? (
-                  <form>
+                  <form1>
                     <div>
                       <label>Email:</label>
                       <input
@@ -226,10 +236,10 @@ const Header = () => {
                         Login
                       </button>
                     </div>
-                  </form>
+                  </form1>
                 ) : (
-                  // Sign Up Form
-                  <form>
+                  // Sign Up form1
+                  <form1>
                     <div>
                       <label>Email:</label>
                       <input
@@ -264,11 +274,11 @@ const Header = () => {
                       />
                     </div>
                     <div style={{ display: 'flex', justifyContent: 'center' }}>
-                      <button type="submit" onClick={sendData}>
+                      <button onClick={sendData}>
                         Sign Up
                       </button>
                     </div>
-                  </form>
+                  </form1>
                 )}
 
                 {/* Switch between Login and Sign Up */}
@@ -276,7 +286,7 @@ const Header = () => {
                   <div className={styles.switchLink}>
                     <p>
                       Don't have an account?{' '}
-                      <a href="#signup" onClick={handleSignUpClick}>
+                      <a onClick={handleSignUpClick}>
                         Sign Up
                       </a>
                     </p>
@@ -285,7 +295,7 @@ const Header = () => {
                   <div className={styles.switchLink}>
                     <p>
                       Already have an account?{' '}
-                      <a href="#login" onClick={handleLoginClick}>
+                      <a onClick={handleLoginClick}>
                         Login
                       </a>
                     </p>

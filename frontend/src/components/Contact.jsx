@@ -24,7 +24,7 @@ const Contact = () => {
   const sendM = async () => {
     try {
       console.log('Form data:', formData);
-      const res = await axios.post('https://braceland-eccomerce-backend.onrender.com/Queries', formData);
+      const res = await axios.post('http://localhost:4000/Queries', formData);
       if (res.status === 201) {
         setIsSubmitted(true);
         console.log('Form Data Submitted:', formData);

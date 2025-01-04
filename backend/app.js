@@ -23,8 +23,10 @@ if (!PORT || !DB_PASS || !USER_ID) {
 conn('BraceLet');
 // Create an Express application
 const app = express();
-app.use(cors())
-
+app.use(cors({
+  origin: 'http://localhost:5173', // Your frontend URL
+  credentials: true, // Allow credentials (cookies, etc.)
+}));
 // Middleware for parsing JSON
 app.use(express.json()); // Important for handling JSON request bodies
 
@@ -318,6 +320,6 @@ app.get('/user/profile',jwtAuthMiddleware,async(req,res)=>{
     res.status(500).json({ error: "Error in fetching cart data" });
   }
 })
-app.listen(process.env.PORT, () => {
+app.listen(4000, () => {
   console.log('Listening on port 3000...');
 });

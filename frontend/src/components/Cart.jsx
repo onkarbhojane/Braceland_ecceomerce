@@ -9,8 +9,8 @@ const Cart = () => {
     const [cartItems, setCartItems] = useState([]);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedItem, setSelectedItem] = useState(null);
-    const {setBuyingPrdt,BuyingPrdt}=useContext(UserContext);
-    const navigate=useNavigate();
+    const { setBuyingPrdt, BuyingPrdt } = useContext(UserContext);
+    const navigate = useNavigate();
     // Fetch cart items when the component mounts
     useEffect(() => {
         const fetchCartItems = async () => {
@@ -39,7 +39,7 @@ const Cart = () => {
         fetchCartItems();
     }, []);  // Only runs once when component is mounted
 
-    const proceedToCheck=()=>{
+    const proceedToCheck = () => {
         setBuyingPrdt(cartItems);
         navigate('/buyNow')
     }
@@ -95,34 +95,43 @@ const Cart = () => {
             <section className={styles.cart}>
                 <div className={styles.cartList}>
                     {cartItems.length === 0 ? (
-                        <p className={styles.noItems}>Your cart is empty</p>  // Show message if no items exist
+                        <>
+                            <h1 className={styles.noItems}>Your cart is empty</h1>
+                            <Shop/>
+                        </>
                     ) : (
-                        cartItems.map((item) => (
-                            <div
-                                key={item._id}
-                                className={styles.cartRow}
-                                onClick={() => openModal(item)}  // Open modal on row click
-                            >
-                                <img
-                                    className={styles.cartImage}
-                                    src={item.img || 'default-image-url.jpg'}  // Check if img exists, otherwise use default
-                                    alt="Cart item"
-                                />
-                                <div className={styles.cartDetails}>
-                                    <h3>{item.Name || 'Product Name'}</h3>  
-                                    <p>{item.price || 'N/A'}</p> {/* Display the price or fallback to 'N/A' */}
-                                </div>
-                                <button
-                                    className={styles.removeButton}
-                                    onClick={(e) => {
-                                        e.stopPropagation();  // Prevent modal from opening when remove is clicked
-                                        removeFromCart(item._id);  // Remove item from cart
-                                    }}
+                        <>
+                            {cartItems.map((item) => (
+                                <div
+                                    key={item._id}
+                                    className={styles.cartRow}
+                                    onClick={() => openModal(item)}  // Open modal on row click
                                 >
-                                    Remove
-                                </button>
+                                    <img
+                                        className={styles.cartImage}
+                                        src={item.img || 'default-image-url.jpg'}  // Check if img exists, otherwise use default
+                                        alt="Cart item"
+                                    />
+                                    <div className={styles.cartDetails}>
+                                        <h3>{item.Name || 'Product Name'}</h3>
+                                        <p>{item.price || 'N/A'}</p> {/* Display the price or fallback to 'N/A' */}
+                                    </div>
+                                    <button
+                                        className={styles.removeButton}
+                                        onClick={(e) => {
+                                            e.stopPropagation();  // Prevent modal from opening when remove is clicked
+                                            removeFromCart(item._id);  // Remove item from cart
+                                        }}
+                                    >
+                                        Remove
+                                    </button>
+                                </div>
+                            ))}
+
+                            <div className={styles.checkoutSection} onClick={proceedToCheck}>
+                                <button className={styles.checkoutButton}>Proceed to Checkout</button>
                             </div>
-                        ))
+                        </>
                     )}
                 </div>
 
@@ -148,12 +157,47 @@ const Cart = () => {
                     </div>
                 )}
 
-                <div className={styles.checkoutSection} onClick={proceedToCheck}>
-                    <button className={styles.checkoutButton}>Proceed to Checkout</button>
-                </div>
             </section>
         </>
     );
 };
 
+const Shop = () => {
+    const [hover, setHover] = useState(false);
+    const navigate = useNavigate();
+  
+    return (
+      <button
+        style={{
+          height: hover ? '65px' : '60px',
+          width: hover ? '145px' : '140px',
+          borderRadius: '10px',
+          boxShadow: '5px 5px 10px 3px rgba(81, 81, 88, 0.4)',
+          backgroundColor: '#F69605',
+          border: 'none',
+          marginLeft: '45%',
+          transition: 'all 0.3s ease-in-out', // Smooth transition
+        }}
+        onMouseEnter={() => setHover(true)}
+        onMouseLeave={() => setHover(false)}
+        
+        onClick={() => navigate('/Explore')}
+      >
+        <h3
+          style={{ color: 'white', margin: 0 }}
+        >
+          Start Shopping
+        </h3>
+      </button>
+    );
+  };
+
+// const Shop=()=>{
+//     return(
+//         <>
+
+//         </>
+//     )
+// }
 export default Cart;
+export {Shop}

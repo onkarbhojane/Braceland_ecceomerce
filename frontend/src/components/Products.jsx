@@ -23,7 +23,7 @@ const Products = () => {
 
   const save = async () => {
     try {
-      const res = await axios.get('https://braceland-eccomerce-backend.onrender.com/FetchProducts');
+      const res = await axios.get('http://localhost:4000/FetchProducts');
       console.log(res.data.docs, "pppppppppppppppp");
       if (res.status === 201) {
         setProducts([...products, ...res.data.docs]);

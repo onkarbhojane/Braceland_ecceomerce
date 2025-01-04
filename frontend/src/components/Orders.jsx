@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import styles from './Orders.module.css';
 import { Navbar } from './ExploreMore';
 import axios from 'axios';
+import { Shop } from './Cart';
 
 const Orders = () => {
     const [orders, setOrders] = useState([]);
@@ -15,7 +16,7 @@ const Orders = () => {
                 console.log("Token:", Token);
 
                 const res = await axios.get(
-                    'https://braceland-eccomerce-backend.onrender.com/getOrders', 
+                    'http://localhost:4000/getOrders',
                     {
                         headers: {
                             Authorization: `Bearer ${Token}`,  // Using Authorization header
@@ -52,7 +53,7 @@ const Orders = () => {
         try {
             const Token = document.cookie.split("=")[1]; // Get the token from cookies
             const res = await axios.post(
-                `https://braceland-eccomerce-backend.onrender.com/cancelOrder/${orderId}`, 
+                `http://localhost:4000/cancelOrder/${orderId}`,
                 {}, // You can pass any required data here
                 {
                     headers: {
@@ -79,7 +80,10 @@ const Orders = () => {
             <section className={styles.orders}>
                 <div className={styles.orderList}>
                     {orders.length === 0 ? (
-                        <p className={styles.noOrders}>Nothing ordered yet</p>  // Show message if no orders exist
+                        <>
+                            <p className={styles.noOrders}>Nothing ordered yet</p>
+                            <Shop />
+                        </>
                     ) : (
                         orders.map((order) => (
                             <div
@@ -88,16 +92,16 @@ const Orders = () => {
                                 onClick={() => openModal(order)}  // Open modal on row click
                             >
                                 {/* Assuming order.Product contains an image or use a default image */}
-                                <img className={styles.orderImage} 
-                                     src={order.Product[0]?.img || 'default-image-url.jpg'} 
-                                     alt="Order" 
+                                <img className={styles.orderImage}
+                                    src={order.Product[0]?.img || 'default-image-url.jpg'}
+                                    alt="Order"
                                 />
                                 <div className={styles.orderDetails}>
                                     <h3>{order.Product[0]?.Name || 'Product Name'}</h3>  {/* Display product name */}
                                     <p>{order.Address}</p>  {/* Display address */}
                                     <p><strong>Payment Method:</strong> {order.PaymentMethod}</p>
                                 </div>
-                                <button 
+                                <button
                                     className={styles.cancelButton}
                                     onClick={(e) => {
                                         e.stopPropagation();  // Prevent modal from opening when cancel is clicked
